@@ -1,19 +1,14 @@
 
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app'
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyCM8s7dMmcwH9AeTD-tUXc73KIutfunlt0",
-
-  authDomain: "vue-3-company-directory-464b9.firebaseapp.com",
-
-  projectId: "vue-3-company-directory-464b9",
-
-  storageBucket: "vue-3-company-directory-464b9.appspot.com",
-
-  messagingSenderId: "341582314883",
-
-  appId: "1:341582314883:web:3545e48787521bac310ab6"
+  apiKey: import.meta.evn.VITE_FIREBASE_APIKEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.evn.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.evn.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.evn.VITE_FIREBASE_APPID, 
 
 };
 

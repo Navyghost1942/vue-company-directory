@@ -23,9 +23,8 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  if (to.meta.requiresAuth && !isAuthenticated) {
-    return { name: 'Login', query: { redirect: to.fullPath } }
-  }
+  if (to.meta.requiresAuth && !isAuthenticated.value) next({ name: 'Login', query: { redirect: to.fullPath }}) 
+    else next()
 })
 
 export default router

@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import { useAuth } from '@/compsables/userAuth'
+import { useAuth } from '@/compsables/useAuth'
 
-const {isAuthenticated, logout, user} =useAuth()
+const {isAuthenticated, logout, user} = useAuth()
 
-  const brand = ref(import.meta.env.VITE_APP_NAME)
+const brand = ref(import.meta.env.VITE_APP_NAME)
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const {isAuthenticated, logout, user} =useAuth()
         <span class="brand-title">{{ brand }}</span>
       </RouterLink>
       <div class="menu">
-        <p v-showclass="isAuthenticated" class="px-2 py-4" >Welcome back <strong><i>{{ user.name }}</i></strong>
+        <p v-showclass="isAuthenticated" class="px-2 py-4" >Welcome back<strong><i>{{ user?.email }}</i></strong>
           </p>
         <div v-if="isAuthenticated">
         <RouterLink :to="{ name: 'Settings'}" href="#" class="menu-login">Settings</RouterLink>
