@@ -4,6 +4,6 @@
 
 <style lang="postcss" scoped>
  .not-found{
-    @apply pt-80 text-center text-7x1 font-bold;
+    @apply pt-80 text-center text-7xl font-bold;
 }
 </style>
