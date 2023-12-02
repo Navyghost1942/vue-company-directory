@@ -1,12 +1,23 @@
 <script setup>
+  import { onMounted } from 'vue'
+
   import MainSearch from '@/components/MainSearch.vue'
   import MainCards from '@/components/MainCards.vue'
   import MainPagination from '@/components/MainPagination.vue'
+
+  import useAPI from '@/composables/useAPI'
+
+  const { getCoffees, loading } = useAPI()
+
+  onMounted(async () => {
+    await getCoffees()
+  })
 </script>
 
 <template>
-  <div class="wrapper">
-    <MainSearch />
+  <p v-if="loading">Loading...</p>
+  <div v-else class="wrapper">
+    <!--<MainSearch />-->
     <MainCards />
     <MainPagination />
   </div>
